@@ -4,7 +4,10 @@ from app.utils import valid_tinfoil_client
 import json
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/tinfoil_client_db"
+DB_HOST = "localhost"
+DB_PORT = 27017
+DB_NAME = "tinfoil_client_db"
+app.config["MONGO_URI"] = f"mongodb://{DB_HOST}:{DB_PORT}/{DB_NAME}"
 mongo = PyMongo(app)
 
 
